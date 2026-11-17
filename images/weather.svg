@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" font-family="Segoe UI,Arial,sans-serif">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
+  <rect width="320" height="180" fill="url(#g)"/>
+  <text x="18" y="30" font-size="13" font-weight="700" fill="#fff">Miami, FL</text>
+  <circle cx="44" cy="64" r="16" fill="#facc15"/>
+  <text x="72" y="74" font-size="28" font-weight="700" fill="#fff">82°</text>
+  <text x="132" y="62" font-size="10" fill="#e0f2fe">Sunny</text>
+  <text x="132" y="76" font-size="10" fill="#e0f2fe">H 85° · L 72°</text>
+  <g font-size="9" fill="#fff" text-anchor="middle">
+    <rect x="14" y="100" width="54" height="66" rx="8" fill="#ffffff33"/><text x="41" y="116">Mon</text><circle cx="41" cy="133" r="8" fill="#facc15"/><text x="41" y="158">84°</text>
+    <rect x="74" y="100" width="54" height="66" rx="8" fill="#ffffff33"/><text x="101" y="116">Tue</text><circle cx="97" cy="131" r="7" fill="#facc15"/><ellipse cx="104" cy="137" rx="10" ry="6" fill="#f1f5f9"/><text x="101" y="158">81°</text>
+    <rect x="134" y="100" width="54" height="66" rx="8" fill="#ffffff33"/><text x="161" y="116">Wed</text><ellipse cx="161" cy="133" rx="12" ry="7" fill="#e2e8f0"/><path d="M155 143l-2 5M161 143l-2 5M167 143l-2 5" stroke="#bae6fd" stroke-width="1.5"/><text x="161" y="158">78°</text>
+    <rect x="194" y="100" width="54" height="66" rx="8" fill="#ffffff33"/><text x="221" y="116">Thu</text><ellipse cx="221" cy="133" rx="12" ry="7" fill="#f1f5f9"/><text x="221" y="158">80°</text>
+    <rect x="254" y="100" width="54" height="66" rx="8" fill="#ffffff33"/><text x="281" y="116">Fri</text><circle cx="281" cy="133" r="8" fill="#facc15"/><text x="281" y="158">83°</text>
+  </g>
+</svg>

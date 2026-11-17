@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" font-family="Consolas,Courier New,monospace">
+  <rect width="320" height="180" fill="#0f172a"/>
+  <rect width="320" height="20" fill="#1e293b"/>
+  <circle cx="12" cy="10" r="4" fill="#ef4444"/><circle cx="24" cy="10" r="4" fill="#f59e0b"/><circle cx="36" cy="10" r="4" fill="#22c55e"/>
+  <text x="160" y="14" font-size="9" fill="#94a3b8" text-anchor="middle">grade_calculator.py</text>
+  <g font-size="10">
+    <text x="14" y="40" fill="#22c55e">$ python grade_calculator.py</text>
+    <text x="14" y="58" fill="#e2e8f0">Enter score 1: <tspan fill="#60a5fa">92</tspan></text>
+    <text x="14" y="74" fill="#e2e8f0">Enter score 2: <tspan fill="#60a5fa">85</tspan></text>
+    <text x="14" y="90" fill="#e2e8f0">Enter score 3: <tspan fill="#60a5fa">88</tspan></text>
+    <text x="14" y="106" fill="#e2e8f0">Enter score 4: <tspan fill="#60a5fa">95</tspan></text>
+    <text x="14" y="128" fill="#94a3b8">----------------------</text>
+    <text x="14" y="146" fill="#e2e8f0">Average: <tspan fill="#facc15">90.0</tspan></text>
+    <text x="14" y="164" fill="#e2e8f0">Letter grade: <tspan fill="#22c55e" font-weight="700">A</tspan></text>
+  </g>
+  <rect x="226" y="120" width="76" height="48" rx="8" fill="#16a34a"/>
+  <text x="264" y="154" font-size="30" font-weight="700" fill="#fff" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">A</text>
+</svg>
