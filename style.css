@@ -1,0 +1,226 @@
+/* =========================================
+   1. COLOR VARIABLES (light + dark themes)
+   ========================================= */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f1f5f9;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #1d4ed8;       /* passes WCAG contrast on white */
+  --primary-text: #ffffff;
+  --card: #ffffff;
+  --border: #cbd5e1;
+  --error: #b91c1c;
+  --success: #15803d;
+}
+
+/* Dark theme: applied when JavaScript adds class="dark" to <body> */
+body.dark {
+  --bg: #0f172a;
+  --bg-alt: #1e293b;
+  --text: #f1f5f9;
+  --muted: #cbd5e1;
+  --primary: #60a5fa;
+  --primary-text: #0f172a;
+  --card: #1e293b;
+  --border: #334155;
+  --error: #fca5a5;
+  --success: #86efac;
+}
+
+/* =========================================
+   2. BASE STYLES
+   ========================================= */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--primary); }
+
+h1, h2, h3 { line-height: 1.2; }
+
+/* =========================================
+   3. REUSABLE CLASSES
+   ========================================= */
+.container { width: 90%; max-width: 1000px; margin: 0 auto; }
+.narrow { max-width: 600px; }
+
+.section { padding: 4rem 0; }
+.alt { background: var(--bg-alt); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.btn,
+.btn-small {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--primary-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font: inherit;
+}
+.btn { padding: 0.75rem 1.5rem; font-weight: 600; }
+.btn-small { padding: 0.35rem 0.8rem; font-size: 0.9rem; }
+.btn:hover, .btn-small:hover { opacity: 0.85; }
+
+/* Visible focus outline for keyboard users */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Skip link: hidden until focused */
+.skip-link { position: absolute; left: -999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: var(--primary); color: var(--primary-text); padding: 0.5rem; z-index: 100; }
+
+/* =========================================
+   4. HEADER + NAV (Flexbox)
+   ========================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+.logo { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.logo span { color: var(--primary); }
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
+.nav-links a:hover { color: var(--primary); }
+
+.menu-toggle { display: none; } /* shown on mobile only */
+
+/* =========================================
+   5. HERO
+   ========================================= */
+.hero { padding: 5rem 0; }
+.hero-inner { display: flex; align-items: center; gap: 2.5rem; }
+.avatar { border-radius: 50%; flex-shrink: 0; object-fit: cover; object-position: center top; }
+.lead { font-size: 1.2rem; color: var(--muted); }
+.greeting { font-weight: 600; color: var(--primary); }
+
+/* =========================================
+   6. SKILLS + PROJECTS (CSS Grid)
+   ========================================= */
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.skill-list li { text-align: center; font-weight: 600; }
+
+.filters { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.filter-btn {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--text);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font: inherit;
+}
+.filter-btn.active { background: var(--primary); color: var(--primary-text); }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* auto-fill keeps card size when filtered */
+  gap: 1.5rem;
+}
+.project img { border-radius: 6px; margin-bottom: 0.5rem; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.project.hidden { display: none; } /* used by the filter script */
+
+/* =========================================
+   7. CONTACT FORM
+   ========================================= */
+.field { display: flex; flex-direction: column; margin-bottom: 1.2rem; }
+label { font-weight: 600; margin-bottom: 0.3rem; }
+input, textarea {
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--card);
+  color: var(--text);
+}
+input.invalid, textarea.invalid { border-color: var(--error); }
+.error { color: var(--error); font-size: 0.9rem; min-height: 1.2em; }
+.success { color: var(--success); font-weight: 600; }
+small { color: var(--muted); }
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+.site-footer {
+  background: var(--bg-alt);
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--muted);
+}
+
+/* =========================================
+   9. RESPONSIVE (tablets + phones)
+   ========================================= */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto; /* push button to the right edge */
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font: inherit;
+  }
+
+  /* Nav becomes a dropdown that JavaScript opens/closes */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+  .nav-links.open { display: flex; }
+
+  .hero-inner { flex-direction: column; text-align: center; }
+  .section { padding: 3rem 0; }
+}

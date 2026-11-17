@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO: page description shown in search results -->
+  <meta name="description" content="Portfolio of Donovan Fortune, a Computer Science student: projects, skills, and contact.">
+  <title>Donovan Fortune | CS Student Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link lets keyboard users jump straight to the content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER + NAVIGATION ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">Donovan<span>.dev</span></a>
+
+      <!-- Menu button only shows on small screens -->
+      <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+        Menu
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="theme-toggle" class="btn-small" aria-label="Switch to dark mode">Dark mode</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main">
+
+    <!-- Hero / intro section -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <img src="images/donovan.jpg" alt="Photo of Donovan Fortune" class="avatar" width="160" height="160">
+        <div>
+          <h1>Hi, I'm Donovan Fortune</h1>
+          <p class="lead">Computer Science student who enjoys building clean, accessible websites.</p>
+          <p id="greeting" class="greeting"><!-- Filled in by JavaScript --></p>
+          <a href="#projects" class="btn">See my work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I'm a second-year Computer Science student. I like turning ideas into simple, useful web pages and I'm currently learning JavaScript and databases.</p>
+      </div>
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li class="card">HTML5</li>
+          <li class="card">CSS3 (Flexbox &amp; Grid)</li>
+          <li class="card">JavaScript</li>
+          <li class="card">Python</li>
+          <li class="card">Git &amp; GitHub</li>
+          <li class="card">SQL</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects section: each project is an <article> -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <!-- Filter buttons (JavaScript shows/hides projects) -->
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project" data-category="web">
+            <img src="images/todo.svg" alt="Screenshot mock-up of the to-do list app">
+            <h3>To-Do List App</h3>
+            <p>Add, check off, and delete tasks. Built with HTML, CSS, and JavaScript.</p>
+          </article>
+
+          <article class="card project" data-category="python">
+            <img src="images/grades.svg" alt="Screenshot mock-up of the grade calculator">
+            <h3>Grade Calculator</h3>
+            <p>A Python program that averages scores and prints a letter grade.</p>
+          </article>
+
+          <article class="card project" data-category="web">
+            <img src="images/weather.svg" alt="Screenshot mock-up of the weather page">
+            <h3>Weather Page</h3>
+            <p>A responsive page that displays a 5-day forecast layout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section with form validation -->
+    <section id="contact" class="section alt">
+      <div class="container narrow">
+        <h2>Contact Me</h2>
+
+        <!-- novalidate: we handle validation in script.js -->
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+            <span class="error" id="name-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <span class="error" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" maxlength="300"></textarea>
+            <small id="char-count">0 / 300 characters</small>
+            <span class="error" id="message-error" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn">Send Message</button>
+          <p id="form-success" class="success" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Donovan Fortune. Built with HTML, CSS &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Script loads last so the HTML exists first -->
+  <script src="script.js"></script>
+</body>
+</html>
